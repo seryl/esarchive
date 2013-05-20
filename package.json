@@ -1,0 +1,31 @@
+
+{
+  "name": "esarchive",
+  "version": "0.0.1",
+  "author": "Josh Toft <joshtoft@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/seryl/esarchive.git"
+  },
+  "dependencies": {
+    "winston": "0.7.1",
+    "winston-mixlib-log": "0.0.2",
+    "optimist": "0.4.0",
+    "nconf": "0.6.7",
+    "pkginfo": "0.2.3",
+    "async": "0.2.7",
+    "request": "2.21.0"
+  },
+  "devDependencies": {
+    "mocha": "1.9.0",
+    "chai": "1.5.0",
+    "coffee-script": "1.6.2",
+    "codo": "1.6.1"
+  },
+  "scripts": {
+    "pretest": "cake build",
+    "prepublish": "cake build",
+    "test": "cake -r dot test"
+  },
+  "main": "./lib/application"
+}
