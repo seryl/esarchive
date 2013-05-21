@@ -13,7 +13,11 @@
     "nconf": "0.6.7",
     "pkginfo": "0.2.3",
     "async": "0.2.7",
-    "request": "2.21.0"
+    "request": "2.21.0",
+    "elasticsearchclient": "0.4.0",
+    "chrono": "0.0.3",
+    "knox": "0.8.1",
+    "knox-mpu": "0.1.0"
   },
   "devDependencies": {
     "mocha": "1.9.0",
