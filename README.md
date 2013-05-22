@@ -20,12 +20,14 @@ The configuration is a straightforward json file:
     {
       "name": "system1",
       "http_port": 9200,
-      "tcp_port": 9300
+      "tcp_port": 9300,
+      "index_path": "/data/elasticsearch/system1/nodes/0/indices"
     },
     {
       "name": "system2",
       "http_port": 9201,
       "tcp_port": 9301,
+      "index_path": "/data/elasticsearch/system2/nodes/0/indices",
       "rotate": "7 days ago"
     }
   ]
@@ -34,9 +36,9 @@ The configuration is a straightforward json file:
 
 There are three main components:
 
-* aws
-* rotate
-* nodes
+* __aws__
+* __rotate__
+* __nodes__
 
 ### aws
 
@@ -47,6 +49,14 @@ The AWS object is just a hash of your AWS access_key and access_secret.
 The default rotation period for triggering an archival & cleanup.
 This can be declared at the top level and also individually for a node.
 
+Note: Unfortunately `chrono` only correctly handles `days ago` at the moment, so everything must be declared based on that.
+
 ### nodes
 
-You must specify the http_port, tcp_port of the systems you want to work with.
+Nodes must specify the following:
+
+* __name__
+* __http_port__
+* __tcp_port__
+* __index_path__
+* rotation _(optional)_
