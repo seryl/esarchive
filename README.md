@@ -36,9 +36,9 @@ The configuration is a straightforward json file:
 
 There are three main components:
 
-* __aws__
-* __rotate__
-* __nodes__
+* aws
+* rotate
+* nodes
 
 ### aws
 
@@ -55,8 +55,8 @@ Note: Unfortunately `chrono` only correctly handles `days ago` at the moment, so
 
 Nodes must specify the following:
 
-* __name__
-* __http_port__
-* __tcp_port__
-* __index_path__
+* name
+* http_port
+* tcp_port
+* index_path
 * rotation _(optional)_
