@@ -47,6 +47,7 @@ The AWS object is just a hash of your AWS access_key and access_secret.
 ### rotate
 
 The default rotation period for triggering an archival & cleanup.
+
 This can be declared at the top level and also individually for a node.
 
 __Note__: Unfortunately `chrono` only correctly handles `days ago` at the moment, so everything must be declared based on that.
