@@ -44,7 +44,6 @@ class ESArchive
   ###
   node_info: (names...) =>
     if names == []
-      (node.)
     else
       console.log names
 
