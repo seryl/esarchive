@@ -13,17 +13,6 @@ class ESArchive
     @setup_config()
 
   ###
-  Takes CLI arguments and runs them agains the 
-  ###
-  handle_cli_args: () =>
-    @commands = cli.argv['_']
-    cmd = @commands.shift()
-    if @[cmd] == undefined or @[cmd] == null
-      console.log "The command `#{cmd}` does not exist."
-    else
-      @[cmd].apply(null, @commands)
-
-  ###
   Reads the configuration for the current esarchive instance.
   ###
   setup_config: () =>
@@ -51,11 +40,21 @@ class ESArchive
     (node.name for node in @nodes())
 
   ###
+  Returns the information for a specific node.
+  ###
+  node_info: (names...) =>
+    if names == []
+      (node.)
+    else
+      console.log names
+
+  ###
   List all of the available elastic search configurations.
   ###
   list: (args...) =>
     for node in @node_names()
       console.log node
+    @node_info(args...)
 
   ###
   Backup one or all of the current ES clients to S3, based on rotation time.

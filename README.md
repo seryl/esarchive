@@ -60,4 +60,5 @@ Nodes must specify the following:
 * http_port
 * tcp_port
 * index_path
+* host _(optional: defaults to `127.0.0.1`)_
 * rotation _(optional)_

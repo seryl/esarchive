@@ -1,15 +1,14 @@
 logger = require './logger'
 cli = require './cli'
 config = require 'nconf'
-ESArchive = require './esarchive'
+ESArchiveCLI = require './esarchive_cli'
 
 ###
 The base application class.
 ###
 class Application
   constructor: () ->
-    @esarchive = new ESArchive()
-    @esarchive.handle_cli_args()
+    @esarchive = new ESArchiveCLI()
 
   abort: (str) =>
     logger.info('aborting...')
