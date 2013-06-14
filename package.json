@@ -9,10 +9,10 @@
   "dependencies": {
     "winston": "0.7.1",
     "winston-mixlib-log": "0.0.2",
-    "optimist": "0.4.0",
+    "optimist": "0.5.2",
     "nconf": "0.6.7",
     "pkginfo": "0.2.3",
-    "async": "0.2.7",
+    "async": "0.2.9",
     "request": "2.21.0",
     "elasticsearchclient": "0.4.0",
     "chrono-node": "0.0.3",
@@ -20,10 +20,10 @@
     "knox-mpu": "0.1.0"
   },
   "devDependencies": {
-    "mocha": "1.9.0",
-    "chai": "1.5.0",
+    "mocha": "1.11.0",
+    "chai": "1.6.1",
     "coffee-script": "1.6.2",
-    "codo": "1.6.1"
+    "codo": "1.7.0"
   },
   "scripts": {
     "pretest": "cake build",
