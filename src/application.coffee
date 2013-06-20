@@ -1,5 +1,4 @@
 logger = require './logger'
-cli = require './cli'
 config = require 'nconf'
 ESArchiveCLI = require './esarchive_cli'
 

@@ -1,9 +1,10 @@
 ESArchive = require './esarchive'
+cli = require './cli'
 
 ###
 The ESArchive CLI Commands.
 ###
-class ESArchive extends ESArchive
+class ESArchiveCLI extends ESArchive
   constructor: () ->
     super()
     @handle_cli_args()
@@ -20,16 +21,20 @@ class ESArchive extends ESArchive
       @[cmd].apply(null, @commands)
 
   ###
+  Spit out node information in json format.
+  ###
+  info: (args...) =>
+    console.log super(args...)
+
+  ###
   List all of the available elastic search configurations.
   ###
   list: (args...) =>
     for node in @node_names()
       console.log node
-    @node_info(args...)
 
   ###
   Backup one or all of the current ES clients to S3, based on rotation time.
-
   @param {Array} args The list of machines to backup, empty assumes all.
   ###
   backup: (args...) =>
@@ -37,7 +42,6 @@ class ESArchive extends ESArchive
 
   ###
   Restore a range of time for a specific ES client on the given ES instance.
-
   @param {Array} args The list of machines to restore, empty assumes all.
   ###
   restore: (args...) =>
@@ -45,10 +49,10 @@ class ESArchive extends ESArchive
 
   ###
   Removes logs and indexes older than the configured rotation time.
-
   @param {Array} args The list of machines to cleanup, empty assumes all.
   ###
   cleanup: (args...) =>
-    console.log args
+    super args..., (err) =>
+      console.log err
 
 module.exports = ESArchiveCLI

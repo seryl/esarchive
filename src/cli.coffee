@@ -39,15 +39,15 @@ class CLI
 
     @configure()
 
-    if config.get('help').toString() is "true" or process.argv.length < 3
+    if config.get('help').toString() is "true"
       optimist.showHelp()
       process.exit(0)
 
   # Configures the nconf mapping where the priority matches the order
   configure: () =>
     @set_overrides()
-    @set_argv()
     @set_env()
+    @set_argv()
     @set_file()
     @set_defaults()
 
