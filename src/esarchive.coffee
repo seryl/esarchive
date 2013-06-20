@@ -110,8 +110,9 @@ class ESArchive
       (index, fn) =>
         fn(@log_rotation(node) > @parse_index_date(index))
       , (indices) =>
-        async.each indices, async.apply(@remove_index, node), (err) =>
-          logger.error err
+        if indices.length > 0
+          async.each indices, async.apply(@remove_index, node), (err) =>
+            logger.error err
 
   ###
   Removes a given index for a single node.
